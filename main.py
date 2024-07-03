@@ -7,7 +7,8 @@ app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
 app.config['SECRET_KEY'] = '51a4a1fb623da401f7de75cd5d661061'
 @app.route("/")
-def hello_world():
+@app.route("/home")
+def home():
     return render_template('home.html', subtitle='Home Page', text='This is the home page')
     
 @app.route("/second_page")
