@@ -10,7 +10,10 @@ app.config['SECRET_KEY'] = '51a4a1fb623da401f7de75cd5d661061'
 def hello_world():
     return render_template('home.html', subtitle='Home Page', text='This is the home page')
     
-    
+@app.route("/second_page")
+def second_page():
+    return render_template('second_page.html', subtitle='Second Page', text='This is the second page')
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
